@@ -1,0 +1,14 @@
+li.contra{
+        color: red;
+    
+}
+
+li.pro{
+    color: green;
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    p#resp {
+        background-color: greenyellow;
+    }
+}

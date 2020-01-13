@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        
+        .abstand{
+            margin-bottom: 1vw;
+            line-height: 2.5;
+        }
+        input[type="text"], textarea{
+            background-color: #EEEEEE;
+            border-radius: 2px;
+        }
+        input[type="submit"]{
+            border-radius: 2px;
+        }
+       
+    </style>
+    <title>Formular</title>
+</head>
+
+<body>
+    <h2>Formular</h2>
+
+    <form action="http://localhost/AB_6_2_MeinScript.php" method="POST">
+
+        <div class="abstand">
+            <input type="text" name="anmeldename" placeholder="Name"> <br>
+            <input type="text" name="str" placeholder="Straße"> <br>
+            <input type="text" name="ort" placeholder="Ort">
+        </div>
+
+        <div class="abstand">
+            Alter:
+            <input type="radio" name="alter" value="kl_10" id="k10">
+            <label for="k10">&lt; 10</label>
+            <input type="radio" name="alter" value="10-19" id="k20">
+            <label for="k20">10-19</label>
+            <input type="radio" name="alter" value="20-29" id="k30">
+            <label for="k30">20-29</label>
+            <input type="radio" name="alter" value="30-49" id="k40">
+            <label for="k40">30-49</label>
+            <input type="radio" name="alter" value="50-65" id="k66">
+            <label for="k66">50-66</label>
+            <input type="radio" name="alter" value="gr_gl_66" id="g65">
+            <label for="g65">&ge; 66</label>
+        </div>
+
+        <div class="abstand">
+            Hobbies:
+            <!--Achtung! Das weglassen der eckigen Klammern führt dazu, dass nur die letzte Auswahl übermittelt wird!-->
+            <label><input type="checkbox" name="hobby[]" value="Sport">Sport</label>
+            <label><input type="checkbox" name="hobby[]" value="Lesen">Lesen</label>
+            <label><input type="checkbox" name="hobby[]" value="Musik hören">Musik hören</label>
+            <label><input type="checkbox" name="hobby[]" value="Musizieren">Musizieren</label>
+            <label><input type="checkbox" name="hobby[]" value="Malen">Malen</label>
+        </div>
+
+        <div class="abstand">
+            Jahreszeit: <!--Das size gibt an, wie viele Felder angezeigt werden-->
+            <select name="jahreszeit" size="1">
+                <option value="frühling">Frühling</option>
+                <option value="sommer">Sommer</option>
+                <option value="herbst">Herbst</option>
+                <option value="winter">Winter</option>
+            </select>
+        </div>
+
+        <div class="abstand">
+            <textarea name="kom" cols="40" rows="10"></textarea>
+        </div>
+
+        <div class="abstand">
+            <input type="submit" value="Abschicken">
+        </div>
+    </form>
+</body>
+
+</html>

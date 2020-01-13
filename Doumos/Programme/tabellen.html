@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <title>Tabellen</title>
+    <meta charset="UTF-8">
+    <style>
+        table,
+        th,
+        td {
+            border: solid 1px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="text-align:center">
+        <!--Start 1. Tabelle-->
+        <!--Überschrift-->
+        <h1>Die Rechnung</h1>
+        <table>
+            <tr>
+                <th>Nettopreis</th>
+                <td>109,25€</td>
+            </tr>
+            <tr>
+                <th>MWSt(19%)</th>
+                <td>20,76€</td>
+            </tr>
+            <tr>
+                <th>Gesamtpreis</th>
+                <td>130,01</td>
+            </tr>
+        </table>
+
+        <!--Ende 1. Tabelle-->
+        <hr>
+
+        <!--Start 2. Tabelle-->
+        <!--Überschrift-->
+        <h1>Die Aufschlüsselung</h1>
+        <table>
+            <!--Erste Zeile (waagerecht)-->
+            <tr>
+                <th>Artikel</th>
+                <!--Mit Hilfe von "colspan" 2 Zellen innerhalb einer Spalte zusammenführen-->
+                <th colspan="2">Preis</th>
+                <th>Menge</th>
+            </tr>
+            <!--Zweite Zeile (waagerecht)-->
+            <tr>
+                <td>Hammer</td>
+                <td>12,50</td>
+                <td>€/Stück</td>
+                <td>5 Stück</td>
+            </tr>
+            <!--Dritte Zeile-->
+            <tr>
+                <td>Schrauben</td>
+                <td>2,75</td>
+                <td>€/ kg</td>
+                <td>17 kg</td>
+            </tr>
+        </table>
+        <!--Ende 2. Tabelle-->
+        <hr>
+        <!--Start 3. Tabelle-->
+        <h1>Weitere Angebote</h1>
+        <table>
+            <!--Zeile 1-->
+            <tr>
+                <th>Gruppe</th>
+                <th>Artikel</th>
+                <th colspan="2">Preis</th>
+            </tr>
+            <!--Zeile 2-->
+            <tr>
+                <td rowspan="2">Werkzeug</td>
+                <td>Hammer</td>
+                <td>12,50</td>
+                <td>€/Stück</td>
+            </tr>
+            <!--Zeile 3-->
+            <tr>
+                <td>Säge</td>
+                <td>2,75</td>
+                <td>€/Stück</td>
+            </tr>
+            <!--Zeile 4-->
+            <tr>
+                <td rowspan="3">Zubehör</td>
+                <td>Nägel</td>
+                <td>0,05</td>
+                <td>€/Stück</td>
+            </tr>
+            <!--Zeile 5-->
+            <tr>
+                <td>Schrauben</td>
+                <td>2,75</td>
+                <td>€/kg</td>
+            </tr>
+            <tr>
+                <td>Nieten</td>
+                <td>0,95</td>
+                <td>€/Stück</td>
+            </tr>
+        </table>
+        <!--Ende 3.Tabelle-->
+        <hr>
+    </div>
+    <a href="/index.html">kunde@fh-swf-webshop.de</a> <br>
+    <a href="CSS_Übung.html">Zurück zu den Aufgaben</a>
+</body>
+
+</html>

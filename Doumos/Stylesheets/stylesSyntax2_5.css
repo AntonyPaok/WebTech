@@ -1,0 +1,15 @@
+body {
+    color: yellow;
+}
+
+#test_id {
+    color: green;
+}
+
+p {
+    color: red;
+}
+
+.test_class {
+    color: blue;
+}

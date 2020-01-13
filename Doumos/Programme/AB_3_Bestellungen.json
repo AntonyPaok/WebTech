@@ -1,0 +1,29 @@
+{
+    "bestellungen": [
+
+        {
+            "nummer": 4711,
+            "bezeichnung": "CPU",
+            "anzahl": 1,
+            "preis": 50.49
+        },
+        {
+            "nummer": 777,
+            "bezeichnung": "Mainboard",
+            "anzahl": 1,
+            "preis": 50.49
+        },
+        {
+            "nummer": 1234,
+            "bezeichnung": "Festplatte",
+            "anzahl": 2,
+            "preis": 155.98
+        },
+        {
+            "nummer": 815,
+            "bezeichnung": "Grafikkarte",
+            "anzahl": 1,
+            "preis": 69.90
+        }
+    ]
+}

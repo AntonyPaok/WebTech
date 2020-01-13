@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T_bestellungen>
+<!--1.Bestellung-->
+    <bestellung>
+        <nummer>
+            4711
+        </nummer>
+        <bezeichnung>
+            CPU
+        </bezeichnung>
+        <anzahl>
+        1
+        </anzahl>
+        <preis>
+        50,49
+        </preis>
+    </bestellung>
+
+<!--2.Bestellung-->
+    <bestellung>
+        <nummer>
+            777
+        </nummer>
+        <bezeichnung>
+            Mainboard
+        </bezeichnung>
+        <anzahl>
+        1
+        </anzahl>
+        <preis>
+        41,95
+        </preis>
+    </bestellung>
+
+<!--3.Bestellung-->
+    <bestellung>
+        <nummer>
+            1234
+        </nummer>
+        <bezeichnung>
+            Festplatte
+        </bezeichnung>
+        <anzahl>
+        2
+        </anzahl>
+        <preis>
+        155,98
+        </preis>
+    </bestellung>
+
+    <!--4.Bestellung-->
+    <bestellung>
+        <nummer>
+            0815
+        </nummer>
+        <bezeichnung>
+            Grafikkarte
+        </bezeichnung>
+        <anzahl>
+        1
+        </anzahl>
+        <preis>
+        69,90
+        </preis>
+    </bestellung>
+</T_bestellungen>
