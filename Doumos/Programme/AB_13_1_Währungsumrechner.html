@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Währungsumrechner</title>
+    <script>
+        var umrechnen = function () {
+            var kurs = document.getElementById("kurs").value;
+            var betrag_euro = document.getElementById("betrag_euro").value;
+            var betrag_dollar = kurs*betrag_euro;
+            document.write(betrag_dollar);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Währungsumrechner</h1>
+        <br>
+        Kurs:
+        <input type="text" id="kurs">
+        $/€
+        <br> <br>
+        Betrag:
+        <input type="text" id="betrag_euro">
+        €
+        <input type="submit" value="=" onclick="umrechnen();">
+
+    </div>
+</body>
+
+</html>
