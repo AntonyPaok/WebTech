@@ -9,9 +9,15 @@
             var kurs = document.getElementById("kurs").value;
             var betrag_euro = document.getElementById("betrag_euro").value;
             var betrag_dollar = kurs*betrag_euro;
-            document.write(betrag_dollar);
+            document.getElementById("ausgabe").innerHTML = betrag_dollar;
         }
     </script>
+
+    <style>
+    .input{
+        display: flex;
+    }
+    </style>
 </head>
 
 <body>
@@ -26,6 +32,7 @@
         <input type="text" id="betrag_euro">
         €
         <input type="submit" value="=" onclick="umrechnen();">
+        <span id="ausgabe"></span>
 
     </div>
 </body>
