@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kapitalquote</title>
+        
+    </head>
+
+    <body>
+        <div>
+            <h2>Geben Sie die folgenden Daten Ihres Unternehmens ein:</h2>
+
+        Eigenkapitalquote:
+        <input type="text" id="eigKap" onkeyup="ermittleFK();"> %
+        <br> <br>
+        Fremdkapitalquote:
+        <input type="text" id="freKap" onkeyup="ermittleEK();"> %
+
+        </div>
+        
+        <script>
+            var ermittleEK = function() {
+                var inp_fk = document.getElementById("freKap").value;
+                var outp_ek = 100 - inp_fk;
+
+                if (inp_fk < 101) {
+                    document.getElementById("eigKap").value = outp_ek;
+                } else {
+                    document.getElementById("eigKap"). value = "ungültige Eingabe"
+                }
+                
+            }
+
+            var ermittleFK = function() {
+                var inp_ek = document.getElementById("eigKap").value;
+                var outp_fk = 100 - inp_ek;
+                
+                if (inp_ek < 101) {
+                    document.getElementById("freKap").value = outp_fk;
+                } else {
+                    document.getElementById("freKap").value = "ungültige Eingabe";
+                }
+                
+            }
+        </script>
+
+    </body>
+</html>
