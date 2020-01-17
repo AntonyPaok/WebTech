@@ -1,49 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Famous Cities</title>
   <meta charset="utf-8">
   <style>
-    body {font-family: Verdana, sans-serif; font-size:0.8em;}
-    header,nav, section,article,footer
-    {border:1px solid grey; margin:5px; padding:8px;}
-    nav ul {margin:0; padding:0;}
-    nav ul li {display:inline; margin:5px;}
+    body {
+      font-family: Verdana, sans-serif;
+      font-size: 0.8em;
+    }
+
+    header,
+    nav,
+    section,
+    article,
+    footer {
+      border: 1px solid grey;
+      margin: 5px;
+      padding: 8px;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 5px;
+    }
   </style>
+
+  <script>
+    /*
+    var select = "GB";
+    switch (select) {
+        case 'DE':
+          request.open("GET", "Doumos\\Programme\\AB_14_2_Berlin.json");
+          request.send();
+         
+
+          break;
+
+        case 'GR':
+          request.open("GET", "Doumos\\Programme\\AB_14_2_Thessaloniki.json");
+          request.send();
+
+          break;
+
+        case 'F':
+          request.open("GET", "Doumos\\Programme\\AB_14_2_Paris.json");
+          request.send();
+
+          break;
+
+        case 'JAP':
+          request.open("GET", "Doumos\\Programme\\AB_14_2_Tokyo.json");
+          request.send();
+
+          break;
+
+        default:
+          request.open("GET", "Doumos\\Programme\\AB_14_2_London.json");
+          request.send();
+
+          break;
+
+      }
+      */
+      
+    var ladeJSON = function () {
+      var select = "GB";
+      
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+          var city = JSON.parse(request.response);
+          var element = document.getElementById("inhalt");
+          var ausgabe = city.name + "is the capital city of " +
+            city.state + " with a metropolitan area of over " +
+            city.residents + " inhabitants. " + city.remark;
+          element.innerHTML = ausgabe;
+          document.getElementById("test").innerHTML = select;
+        }
+      };
+      request.open("GET", "http://haegar.fh-swf.de/json-artikel.php");
+      request.send();
+
+      
+    }
+  </script>
 </head>
 
 <body>
-<header>
-  <h1>Famous Cities</h1>
-</header>
+  <header>
+    <h1>Famous Cities</h1>
+  </header>
 
-<nav>
-<ul>
-  <li><input type="button" value="Berlin"/></li>
-  <li><input type="button" value="Thessaloniki"/></li>
-  <li><input type="button" value="Paris"/></li>
-  <li><input type="button" value="London"/></li>
-  <li><input type="button" value="Tokyo"/></li>
-</ul>
-</nav>
+  <nav>
+    <ul>
+      <li><input type="button" value="Berlin" onclick=" select = 'DE' " /></li>
+      <li><input type="button" value="Thessaloniki" onclick="ladeJSON(); select = 'GR' " /></li>
+      <li><input type="button" value="Paris" onclick="ladeJSON(); select = 'F' " /></li>
+      <li><input type="button" value="London" onclick="ladeJSON(); select = 'GB' " /></li>
+      <li><input type="button" value="Tokyo" onclick="ladeJSON(); select = 'JAP' " /></li>
+    </ul>
+  </nav>
 
-<section>
+  <section>
 
-<h2>Detailed Informations</h2>
+    <h2>Detailed Informations</h2>
 
-<article>
-<h3 id="titel">London</h3>
-<p id="inhalt">
-  London is the capital city of England
-  with a metropolitan area of over 13 million inhabitants.
-  It is the most populous city in the United Kingdom.
-</p>
-</article>
+    <article>
+      <h3 id="titel">London</h3>
+      <p id="inhalt">
+        London is the capital city of England
+        with a metropolitan area of over 13 million inhabitants.
+        It is the most populous city in the United Kingdom.
+      </p>
+      <p id="test"></p>
+    </article>
 
-</section>
+  </section>
 
-<footer>
-<p>&copy; 2016 FH Südwestfalen.</p>
-</footer>
+  <footer>
+    <p>&copy; 2016 FH Südwestfalen.</p>
+  </footer>
 
 </body>
