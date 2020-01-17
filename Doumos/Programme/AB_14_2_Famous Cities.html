@@ -32,62 +32,32 @@
   </style>
 
   <script>
-    /*
-    var select = "GB";
-    switch (select) {
-        case 'DE':
-          request.open("GET", "Doumos\\Programme\\AB_14_2_Berlin.json");
-          request.send();
-         
+    var stadt = new XMLHttpRequest();
 
-          break;
+    function ladeStadt() {
+      stadt = event.target.value;
+      ladeJSON(stadt);
+    }
 
-        case 'GR':
-          request.open("GET", "Doumos\\Programme\\AB_14_2_Thessaloniki.json");
-          request.send();
+    var request = new XMLHttpRequest();
 
-          break;
-
-        case 'F':
-          request.open("GET", "Doumos\\Programme\\AB_14_2_Paris.json");
-          request.send();
-
-          break;
-
-        case 'JAP':
-          request.open("GET", "Doumos\\Programme\\AB_14_2_Tokyo.json");
-          request.send();
-
-          break;
-
-        default:
-          request.open("GET", "Doumos\\Programme\\AB_14_2_London.json");
-          request.send();
-
-          break;
-
-      }
-      */
-      
     var ladeJSON = function () {
-      var select = "GB";
-      
-      var request = new XMLHttpRequest();
+
       request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
           var city = JSON.parse(request.response);
           var element = document.getElementById("inhalt");
-          var ausgabe = city.name + "is the capital city of " +
+          var ausgabe = city.name + " is the capital city of " +
             city.state + " with a metropolitan area of over " +
             city.residents + " inhabitants. " + city.remark;
           element.innerHTML = ausgabe;
           document.getElementById("test").innerHTML = select;
         }
       };
-      request.open("GET", "http://haegar.fh-swf.de/json-artikel.php");
+      request.open("GET", "AB_14_2_" + stadt + ".json");
       request.send();
 
-      
+
     }
   </script>
 </head>
@@ -99,11 +69,11 @@
 
   <nav>
     <ul>
-      <li><input type="button" value="Berlin" onclick=" select = 'DE' " /></li>
-      <li><input type="button" value="Thessaloniki" onclick="ladeJSON(); select = 'GR' " /></li>
-      <li><input type="button" value="Paris" onclick="ladeJSON(); select = 'F' " /></li>
-      <li><input type="button" value="London" onclick="ladeJSON(); select = 'GB' " /></li>
-      <li><input type="button" value="Tokyo" onclick="ladeJSON(); select = 'JAP' " /></li>
+      <li><input type="button" value="Berlin" onclick=" ladeStadt();" /></li>
+      <li><input type="button" value="Thessaloniki" onclick="ladeStadt(); " /></li>
+      <li><input type="button" value="Paris" onclick="ladeStadt();" /></li>
+      <li><input type="button" value="London" onclick="ladeStadt(); " /></li>
+      <li><input type="button" value="Tokyo" onclick="ladeStadt(); " /></li>
     </ul>
   </nav>
 
