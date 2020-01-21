@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Farbe Ändern</title>
+        <meta charset="UTF-8">
+        <script>
+            var changeColor = function(farbe) {
+                document.getElementById("inhalt").style.color = farbe;
+            }
+        </script>
+    </head>
+
+    <body>
+        <p id="inhalt">
+            Ändere meine Farbe:
+            <br><br>
+            <input type="button" value="Grün" onclick="changeColor('green');">
+            <input type="button" value="Rot" onclick="changeColor('red');" style="margin-left:30px ;">
+        </p> 
+    </body>
+</html>
