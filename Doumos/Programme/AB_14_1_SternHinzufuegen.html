@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Stern Hinzufügen</title>
+
+    <script>
+        function sternHinzu() {
+            var img = document.createElement("img");
+            img.src = "../Grafiken/stern.png";
+            var src = document.getElementById("sterne");
+            src.appendChild(img);
+        }
+
+        function sternEntfernen() {
+            var stern = document.getElementById("sterne");
+            if (stern.hasChildNodes()) {
+                stern.removeChild(stern.childNodes[0]);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <input type="button" value="Stern erstellen" onclick="sternHinzu();">
+    <input type="button" value="Stern entfernen" onclick="sternEntfernen();">
+
+    <div id="sterne"></div>
+</body>
+
+</html>
