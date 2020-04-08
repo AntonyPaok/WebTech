@@ -10,9 +10,15 @@
             border: solid 2px;
             padding: 10px;
         }
-        
     </style>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("tr:odd").css("background-color", "lightblue");
+            });
+        });
+    </script>
     <title>jQuery change bg-Color</title>
 </head>
 
@@ -45,7 +51,15 @@
                 <td>UK</td>
             </tr>
         </table>
+
+        <p>
+            Dies ist erstmals Aufgabenteil a).
+            <br> Nach dem betätigen des Buttons wird Aufgabenteil b) angezeigt.
+        </p>
+        <button>Aufgabenteil b)</button>
     </div>
+
+
 </body>
 
 </html>
