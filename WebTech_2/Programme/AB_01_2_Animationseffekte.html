@@ -6,9 +6,14 @@
     <title>Animationseffekte</title>
 
     <style>
-
+        .center {
+            margin: auto;
+            width: fit-content;
+            padding: 10px;
+        }
     </style>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
     <script>
         $(function () {
             $("#fd").click(function () {
@@ -16,30 +21,33 @@
             });
         });
 
-        $(function() {
-            $("#click").click(function() {
+        $(function () {
+            $("#click").click(function () {
                 $("#slide").slideToggle();
             });
         });
 
-        $(function() {
-            $("#expl").click(function() {
-                $("#explode").toggle();
+        $(function () {
+            $("#exp_btn").click(function () {
+                $("#expl").toggle("explode", 2000);
             });
         });
     </script>
 </head>
 
 <body>
-    <div>
-        <button id="fd">Ein-/Ausblenden</button>
+    <div class="center">
+
+        <p class="center">
+            <button id="fd">Ein-/Ausblenden</button>
+        </p>
 
         <p id="fade">
             <img src="/WebTech_2/Grafiken/HTML5.png" alt="HTML5-Symbol">
         </p>
     </div>
 
-    <div>
+    <div class="center">
         <p id="click">
             Klicken um Bild einzuschieben
         </p>
@@ -49,12 +57,15 @@
         </p>
     </div>
 
-    <div>
-        <button id="expl">Explodieren</button>
+    <div class="center">
+        <p class="center">
+            <button id="exp_btn">Explode</button>
+        </p>
 
-        <p id="explode">
+        <p id="expl">
             <img src="/WebTech_2/Grafiken/HTML5.png" alt="HTML5-Symbol">
         </p>
+
     </div>
 
 </body>
