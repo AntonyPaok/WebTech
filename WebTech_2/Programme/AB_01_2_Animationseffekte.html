@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animationseffekte</title>
+
+    <style>
+
+    </style>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#fd").click(function () {
+                $("#fade").fadeToggle();
+            });
+        });
+
+        $(function() {
+            $("#click").click(function() {
+                $("#slide").slideToggle();
+            });
+        });
+
+        $(function() {
+            $("#expl").click(function() {
+                $("#explode").toggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="fd">Ein-/Ausblenden</button>
+
+        <p id="fade">
+            <img src="/WebTech_2/Grafiken/HTML5.png" alt="HTML5-Symbol">
+        </p>
+    </div>
+
+    <div>
+        <p id="click">
+            Klicken um Bild einzuschieben
+        </p>
+
+        <p id="slide">
+            <img src="/WebTech_2/Grafiken/HTML5.png" alt="HTML5-Symbol">
+        </p>
+    </div>
+
+    <div>
+        <button id="expl">Explodieren</button>
+
+        <p id="explode">
+            <img src="/WebTech_2/Grafiken/HTML5.png" alt="HTML5-Symbol">
+        </p>
+    </div>
+
+</body>
+
+</html>
