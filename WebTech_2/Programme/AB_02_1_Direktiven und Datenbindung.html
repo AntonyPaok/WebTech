@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2.1 Direktiven und Datenbindung</title>
+
+    <style>
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <script>
+
+    </script>
+</head>
+
+<!--data-Prefix für die Validator Warnungen-->
+
+<body data-ng-app="">
+    <!--Aufgabenteil a)-->
+    <div>
+        <h2>a) Datenbindung</h2>
+        <p>Mit dieser Anwendung können Sie ganz leicht den Gesamtpreis ermitteln!</p>
+        <p>Bitte geben Sie folgende Daten ein:</p>
+
+        <label for="menge">Menge:</label>
+        <input type="text" id="menge" data-ng-model="menge"> Stk.
+        <br> <br>
+        <label for="preis">Preis:</label>
+        <input type="text" id="preis" data-ng-model="preis"> €
+        <p>
+            Gesamtpreis: {{menge*preis}} €
+        </p>
+    </div>
+
+    <!--Aufgabenteil b)-->
+    <div>
+        <h2>b) Bild ausblenden mit CSS</h2>
+        <p>In diesem Teil der Aufgabe kann ein Bild mit Hilfe eines Sliders ausgeblendet werden!</p>
+        <p>Bewegen Sie den Slider!</p>
+
+        <input id="opacity" type="range" name="opacity" min="0" max="1" step="0.01" data-ng-model="input_opc">
+        <br> Tranzparenz: {{input_opc}}
+
+        <img style="opacity: {{ input_opc }};" src="/WebTech_2/Grafiken/AngularJS.png" alt="Icon für AngularJS">
+    </div>
+
+    <!--Aufgabenteil c)-->
+    <div>
+        <h2>c) Direktiven hide & show</h2>
+        <p>In diesem Teil der Aufgabe ist ein Text und eine Checkbox zu sehen.
+        <br>Wenn die Checkbox selektiert ist, erscheint ein anderer Text.
+        </p>
+
+        
+    </div>
+</body>
+
+</html>
