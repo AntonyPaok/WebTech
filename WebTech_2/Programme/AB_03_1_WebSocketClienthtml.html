@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+
+ <html lang="de">
+
+ <head>
+     <meta charset="utf-8">
+     <title>WebSockets - A Simple Echo Server</title>
+     <script>
+         var onload = function () {
+             var terminal = document.getElementById("terminal"); // reference for outputs
+
+             // open WebSocket connection 
+             var connection = new WebSocket('ws://194.94.2.20:8087/chat');
+
+             // The event handlers: 
+             connection.onopen = function () {
+                 document.getElementById("status").innerHTML = connection.readyState;
+             };
+             connection.onclose = function () {
+                 document.getElementById("status").innerHTML = connection.readyState;
+             };
+
+             connection.onmessage = function (message) {
+                 document.getElementById("status").innerHTML = connection.readyState;
+                 if (message.data) { // only print of there are data sent 
+                     terminal.innerHTML += "SERVER: " + message.data + "\n";
+                     if (message.data === "bye") {
+                         connection.close();
+                     }
+                 }
+                 terminal.scrollTop = terminal.scrollHeight; // focus to the last line 
+                 document.getElementById("status").innerHTML = connection.readyState;
+             };
+             /* Event handler for input field: Send message when user presses Enter key. */
+             document.getElementById("input").onkeydown = function (event) { // event handler 
+                 if (event.keyCode === 13) { // <= Ënter"key 
+                     var msg = document.getElementById("input").value;
+                     if (msg) { // only act if message is not empty ... 
+                         connection.send(msg);
+                         document.getElementById("input").value = "";
+                         terminal.innerHTML += "YOU: " + msg + "\n";
+                         terminal.scrollTop = terminal.scrollHeight; // focus to the last line 
+                     }
+                 }
+                 document.getElementById("status").innerHTML = connection.readyState;
+             };
+         }
+     </script>
+ </head>
+
+ <body>
+
+     <textarea id="terminal" rows="10" cols="80" readonly></textarea>
+     <p>
+         <input type="text" id="input" size="81" placeholder="Send a message, quit with 'bye'" />
+     </p>
+     <div>(Connection readyState: <span id="status"></span>)</div>
+ </body>
+
+ </html>
