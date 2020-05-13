@@ -58,11 +58,12 @@
         <p>In diesem Teil der Aufgabe ist ein Text und eine Checkbox zu sehen.
             <br>Wenn die Checkbox selektiert ist, erscheint ein anderer Text.
         </p>
-
+        <!--Diese checkbox ist sichtbar, solange myValue unchecked-->
         <div data-ng-hide="myValue" class="rahmen">
             <input type="checkbox" id="verstecken" data-ng-model="myValue">
             <label for="verstecken">Text verstecken</label>
         </div>
+        <!--Diese checkbox ist sichtbar, solange myValue checked-->
         <div data-ng-show="myValue" class="rahmen">
             <input type="checkbox" id="anzeigen" data-ng-model="myValue">
             <label for="anzeigen">Text anzeigen</label>
