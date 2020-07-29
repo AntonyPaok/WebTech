@@ -5,32 +5,30 @@
     <meta charset="UTF-8">
     <title>Suchbegriffvervollständigung</title>
 
-    <style>
 
-    </style>
-
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-    <script>
-        $(function () {
-            var sprachen = [
-                "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"
-            ];
-            $("#input").autocomplete({
-                source: sprachen
-            });
-        });
-    </script>
-</head>
-
-<body>
-    <div class="ui-widget">
-        <p>Geben Sie einen Suchbegriff ein:</p>
-
-        <input type="text" id="input">
-    </div>
-</body>
+   
+      <script>
+    var senden = function() {
+       $.ajax({
+          type: "PUT",
+          url: "http://haegar.fh-swf.de/AJAX/spiegel.php",
+          data: "Titel=" + document.getElementById("film").value,
+          success: function(response) {
+             document.getElementById("response").innerHTML = response;
+          },
+          error: function(xhr,status,error) {
+             document.getElementById("error").innerHTML
+             = "Response: " + xhr.responseText
+             + "Status: " + status + ", Error: " +  error;
+          }
+       });
+    }
+      </script>
+    </head>
+    <body>
+      Film: <input type="text" name="film" id="film" value="Ex Machina"/>
+      <br/>
+      <button onclick="senden()">Eintragen</button>
+    </body>
 
 </html>
